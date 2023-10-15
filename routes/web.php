@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('rezepte', function () {
+    return view('rezepte');
+})->name('rezepte');
+
+Route::get('belegte-brötchen', function () {
+    return view('belegte-brötchen');
+})->name('belegte-brötchen');
+
+Route::get('rezept-brötchen', function () {
+    return view('rezept-brötchen');
+})->name('rezept-brötchen');
