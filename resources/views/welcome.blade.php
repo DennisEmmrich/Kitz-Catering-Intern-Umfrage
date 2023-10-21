@@ -1,5 +1,8 @@
 @props([
-    'img' => 'https://placehold.co/600x600'
+    'img' => 'https://placehold.co/600x600',
+    'recipes' => array(
+        'product' => 'Brötchen 1 local', 'Brötchen 2 local',
+    ),
 ])
 
 <x-layout>
@@ -17,6 +20,7 @@
                 Mit freundlichen Grüßen <br /> <br />
 
                 Susanne Emmrich
+
             </div>
             <div class="whitespace-nowrap">
                 <img class="h-32" src="https://placehold.co/600x600" alt="">

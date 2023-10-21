@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'cms' => [
+        'key' => env('COCKPIT_KEY'),
+        'api' => env('COCKPIT_API'),
+        'cms_url' => env('COCKPIT_CMS_URL'),
+        'cms_asset_url' => env('COCKPIT_ASSET_URL'),
+    ],
 ];

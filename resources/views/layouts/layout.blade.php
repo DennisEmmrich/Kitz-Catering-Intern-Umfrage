@@ -37,7 +37,7 @@
 <header class="w-full font-sans">
     <div class="max-w-fit mx-auto">
         <a href="{{ route('welcome') }}">
-            <img class="h-20 mx-auto" src="{{ asset('assets/logos/Logo.png') }}" alt="" draggable="false">
+            <img class="h-24 mx-auto" src="{{ asset('assets/logos/Logo.png') }}" alt="" draggable="false">
         </a>
     </div>
 </header>
@@ -49,8 +49,8 @@
 </main>
 
 
-<footer class="w-full font-sans sticky top-[100vh] cursor-none select-none">
-    <div class="w-full text-sm text-white text-center py-7 opacity-30 cursor-none">
+<footer class="w-full font-sans sticky top-[100vh] select-none">
+    <div class="w-full text-sm text-white text-center py-7 opacity-30 cursor-default">
         &copy; Copyright {{ now()->year }} Kitz-Catering - All Rights Reserved
     </div>
 </footer>
