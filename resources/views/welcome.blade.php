@@ -31,6 +31,10 @@
 
         <div class="grid md:grid-cols-2 grid-cols-1 justify-center gap-10 text-center">
 
+            @foreach($recipes as $item)
+                {{ $item['product'] }}
+            @endforeach
+
             <x-dashboard-tile :info="false" :path="asset('assets/images/rezepte.jpg')">
                 <x-slot:link>{{ route('rezepte') }}</x-slot:link>
                 <x-slot:headline>Rezepte</x-slot:headline>
