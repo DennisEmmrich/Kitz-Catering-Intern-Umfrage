@@ -14,15 +14,16 @@ use \App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class,"welcome"])->name('welcome');
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('rezepte', function () {
     return view('rezepte');
 })->name('rezepte');
 
-Route::get('belegte-brötchen', function () {
-    return view('belegte-brötchen');
-})->name('belegte-brötchen');
+Route::get('/belegte-brötchen', [PageController::class,"belegtebrötchen"])->name('belegte-brötchen');
 
 Route::get('rezept-brötchen', function () {
     return view('rezept-brötchen');

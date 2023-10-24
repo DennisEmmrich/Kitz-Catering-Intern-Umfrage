@@ -16,12 +16,12 @@ class PageController extends Controller
         ]);
     }
 
-    public function rezepte()
+    public function belegtebrötchen()
     {
         $cms = new CmsController;
 
         $recipes = $cms->modelContent('recipes')->result();
-        return view('rezepte', [
+        return view('belegte-brötchen', [
             'recipes' => $recipes
         ]);
     }
