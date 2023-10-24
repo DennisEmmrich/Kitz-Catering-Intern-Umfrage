@@ -44,7 +44,7 @@
 
 
 <!-- Page Content -->
-<main class="w-full font-sans select-none">
+<main class="w-full font-sans select-none relative z-10">
     {{ $slot }}
 </main>
 

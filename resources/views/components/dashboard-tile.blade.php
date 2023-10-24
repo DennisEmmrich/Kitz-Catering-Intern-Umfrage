@@ -1,4 +1,5 @@
 @props([
+    'link' => '',
     'path' => '',
 ])
 <div class="cursor-pointer transform hover:scale-105 transition" draggable="false">

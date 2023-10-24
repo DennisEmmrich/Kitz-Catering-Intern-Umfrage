@@ -6,7 +6,7 @@
     ],
     'link' => ''
 ])
-<section {{ $attributes->merge(['class' => "max-w-5xl mx-auto px-6 {$style[$type]}"]) }}>
+<section {{ $attributes->merge(['class' => "max-w-4xl mx-auto px-6{$style[$type]}"]) }}>
     <div class="@if($link) @else pt-8 @endif">
         @if($link)
             <div class="max-w-fit @if($link) block @else invisible @endif">
