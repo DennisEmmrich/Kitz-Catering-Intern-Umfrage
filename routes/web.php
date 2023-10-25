@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('betriebsanweisungen', function () {
+    return view('betriebsanweisungen');
+})->name('betriebsanweisungen');
+
 Route::get('rezepte', function () {
     return view('rezepte');
 })->name('rezepte');
@@ -29,6 +33,3 @@ Route::get('rezept-brötchen', function () {
 
 Route::get('/belegte-brötchen', [PageController::class,"belegtebrötchen"])->name('belegte-brötchen');
 
-Route::get('betriebsanweisungen', function () {
-    return view('betriebsanweisungen');
-})->name('betriebsanweisungen');
