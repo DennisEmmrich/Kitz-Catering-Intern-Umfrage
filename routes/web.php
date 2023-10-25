@@ -23,8 +23,12 @@ Route::get('rezepte', function () {
     return view('rezepte');
 })->name('rezepte');
 
-Route::get('/belegte-brötchen', [PageController::class,"belegtebrötchen"])->name('belegte-brötchen');
-
 Route::get('rezept-brötchen', function () {
     return view('rezept-brötchen');
 })->name('rezept-brötchen');
+
+Route::get('/belegte-brötchen', [PageController::class,"belegtebrötchen"])->name('belegte-brötchen');
+
+Route::get('betriebsanweisungen', function () {
+    return view('betriebsanweisungen');
+})->name('betriebsanweisungen');

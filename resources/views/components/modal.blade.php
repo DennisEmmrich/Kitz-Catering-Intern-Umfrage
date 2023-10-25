@@ -1,46 +1,49 @@
 @props([
-    'key' => 'show',
-    'bg' => true,
-    'close' => false,
-])<!-- modal Einstellungen hier -->
-<div class="" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="{{ $key }}">
+    'button' => '',
+])
+<div
+    x-data="{ fullscreenModal: false }"
+    x-init="
+                    $watch('fullscreenModal', function(value){
+                            if(value === true){
+                                document.body.classList.add('overflow-hidden');
+                            }else{
+                                document.body.classList.remove('overflow-hidden');
+                            }
+                        })
+                    "
+    @keydown.escape="fullscreenModal=false"
+>
 
+    {{ $button }}
 
-    @if($bg === 'true')
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" x-show="{{ $key }}"
-         x-transition:enter="ease-out duration-300"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-100"
-         x-transition:leave="ease-in duration-200"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0"
-    ></div>
-    @endif
+    <template x-teleport="body">
 
-    <div class="top-0">
-        <div class="flex absolute min-h-full w-screen items-center justify-center p-4 text-center sm:items-center sm:p-0 z-50">
-            <div class="transform bg-bgColorPrimary px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:p-6" x-show="{{ $key }}" @click.away="{{ $key }} = false"
-                 x-transition:enter="ease-out duration-300"
-                 x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                 x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                 x-transition:leave="ease-in duration-200"
-                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            >
+        <div
+            x-show="fullscreenModal"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-y-full"
+            x-transition:enter-end="translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="translate-y-0"
+            x-transition:leave-end="translate-y-full"
+            class="flex fixed inset-0 z-[99] w-screen h-screen"
+        >
 
-                @if($close === 'true')
-                <div class="absolute left-0 top-0 h-8 w-8 -translate-x-1/3 -translate-y-1/3 bg-white dark:bg-gray-700 rounded-full text-primary dark:text-gray-100 cursor-pointer" @click="{{ $key }} = false">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <!-- content -->
+            <div class="relative top-0 bottom-0 right-0 flex-shrink-0 w-full md:max-w-4xl mx-auto p-6 overflow-auto bg-cover bg-bgColorPrimary block text-white">
+
+                <button @click="fullscreenModal=false" class="absolute top-0 right-0 z-30 items-center justify-center mt-3 mr-6 md:mt-5 md:mr-12 transition hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                </div>
-                @endif
+                </button>
 
-                <div class="text-left dark:text-gray-100 z-50 ">
-                    {!! $slot !!}
-                </div>
+                {{ $slot }}
 
             </div>
+            <!-- end content -->
+
         </div>
-    </div>
+    </template>
 </div>

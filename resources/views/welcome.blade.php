@@ -36,6 +36,11 @@
 
             <x-dashboard-tile :info="false" :path="asset( $img )">
                 <x-slot:link></x-slot:link>
+                <x-slot:headline>Bestellungen</x-slot:headline>
+            </x-dashboard-tile>
+
+            <x-dashboard-tile :info="false" :path="asset( $img )">
+                <x-slot:link>{{ route('betriebsanweisungen') }}</x-slot:link>
                 <x-slot:headline>Betriebsanweisungen</x-slot:headline>
             </x-dashboard-tile>
 
