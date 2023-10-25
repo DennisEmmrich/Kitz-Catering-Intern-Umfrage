@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('betriebsanweisungen', function () {
-    return view('betriebsanweisungen');
-})->name('betriebsanweisungen');
+Route::get('anweisungen', function () {
+    return view('anweisungen');
+})->name('anweisungen');
 
 Route::get('rezepte', function () {
     return view('rezepte');
