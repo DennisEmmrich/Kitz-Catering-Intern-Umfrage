@@ -1,6 +1,3 @@
-@props([
-
-])
 
 <x-layout pageTitle="Kitz-Catering / Belegte Brötchen">
 
