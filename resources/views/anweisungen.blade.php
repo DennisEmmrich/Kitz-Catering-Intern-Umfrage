@@ -1,4 +1,3 @@
-
 <x-layout pageTitle="Kitz-Catering / Belegte Brötchen">
 
     <x-section link="rezepte">
