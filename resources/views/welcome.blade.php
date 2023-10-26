@@ -34,12 +34,14 @@
                 <x-slot:headline>Rezepte</x-slot:headline>
             </x-dashboard-tile>
 
+            <!--
             <x-dashboard-tile :path="asset( $img )">
                 <x-slot:link></x-slot:link>
                 <x-slot:headline>Bestellungen</x-slot:headline>
             </x-dashboard-tile>
+            -->
 
-            <x-dashboard-tile :path="asset( $img )">
+            <x-dashboard-tile :path="asset( 'assets/images/betriebsanweisungen.jpg' )">
                 <x-slot:link>{{ route('betriebsanweisungen') }}</x-slot:link>
                 <x-slot:headline>Betriebsanweisungen</x-slot:headline>
             </x-dashboard-tile>
@@ -49,10 +51,12 @@
                 <x-slot:headline>Gebrauchsanweisungen</x-slot:headline>
             </x-dashboard-tile>
 
+            <!--
             <x-dashboard-tile :path="asset('assets/images/onboarding.jpg')">
                 <x-slot:link></x-slot:link>
                 <x-slot:headline>Onboarding</x-slot:headline>
             </x-dashboard-tile>
+            -->
 
             <x-dashboard-tile :path="asset('assets/images/ansprechpartner.jpg')">
                 <x-slot:link></x-slot:link>
