@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('anweisungen', function () {
+Route::get('/anweisungen', function () {
     return view('anweisungen');
 })->name('anweisungen');
 
