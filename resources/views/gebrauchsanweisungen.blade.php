@@ -1,17 +1,17 @@
 <?php
 $instructions = array(
     [
-    'name' => 'Betriebsanweisung 1',
+    'name' => 'Gebrauchsanweisung 1',
     'file' => asset('assets/betriebsanweisungen/dummy.pdf'),
     ],
     [
-    'name' => 'Betriebsanweisung 2',
+    'name' => 'Gebrauchsanweisung 2',
     'file' => asset('assets/betriebsanweisungen/dummy.pdf'),
     ],
 );
 ?>
 
-<x-layout pageTitle="Kitz-Catering / Betriebsanweisungen">
+<x-layout pageTitle="Kitz-Catering / Gebrauchsanweisungen">
 
     <x-section link="welcome">
 
@@ -27,7 +27,7 @@ $instructions = array(
                 </x-slot:button>
 
                 <!--content slot -->
-                <iframe class="mt-12" src="{{ $instruction['file'] }}" style="width:100%; height:92%;" frameborder="0"></iframe>
+                <iframe class="mt-12" src="{{ $instruction['file'] }}" style="width:100%; height:100%;" frameborder="0"></iframe>
                 <!--end content slot -->
             </x-modal>
             @endforeach

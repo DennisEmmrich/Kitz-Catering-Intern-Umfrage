@@ -23,13 +23,17 @@ Route::get('betriebsanweisungen', function () {
     return view('betriebsanweisungen');
 })->name('betriebsanweisungen');
 
+Route::get('gebrauchsanweisungen', function () {
+    return view('gebrauchsanweisungen');
+})->name('gebrauchsanweisungen');
+
+Route::get('ansprechpartner', function () {
+    return view('ansprechpartner');
+})->name('ansprechpartner');
+
 Route::get('rezepte', function () {
     return view('rezepte');
 })->name('rezepte');
-
-Route::get('rezept-brötchen', function () {
-    return view('rezept-brötchen');
-})->name('rezept-brötchen');
 
 Route::get('/belegte-brötchen', [PageController::class,"belegtebrötchen"])->name('belegte-brötchen');
 
