@@ -57,7 +57,7 @@
 
                     </div>
 
-                    <div class="col-span-3 md:col-span-1 mt-4">
+                    <div class="col-span-3 md:col-span-1 md:mt-4">
 
                         <x-h2>Allergene:</x-h2>
 
