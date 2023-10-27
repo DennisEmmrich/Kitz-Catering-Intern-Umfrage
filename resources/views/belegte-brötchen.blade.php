@@ -1,6 +1,7 @@
 @props([
     'recipes' => array(),
     'ingredients' => array(),
+    'path' => '',
     'allergenic1' => 'null',
     'allergenic2' => 'null',
     'allergenic3' => 'null',
@@ -26,13 +27,9 @@
             <x-modal>
                 <x-slot:button>
                     <!-- tile -->
-                    <div class="cursor-pointer transform hover:scale-105 transition" @click="fullscreenModal=true" draggable="false">
-                        <div class="w-full h-52 grid content-end text-white text-2xl font-bold rounded-xl bg-cover bg-center" style="background-image: url('{{ asset( 'assets/images/brötchen.jpg' ) }}');">
-                            <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
-                                {{ $recipe['product'] }}
-                            </div>
-                        </div>
-                    </div>
+                    <x-dashboard-tile-recipe :path="asset( 'assets/images/brötchen.jpg' )">
+                        {{ $recipe['product'] }}
+                    </x-dashboard-tile-recipe>
                     <!--end tile -->
                 </x-slot:button>
 
@@ -52,18 +49,18 @@
                 </div>
 
                 <div class="grid grid-cols-3 gap-x-10">
-                    <div class="col-span-2">
+
+                    <div class="col-span-3 md:col-span-2 mt-4">
                         <x-h2>Zutaten:</x-h2>
-                    </div>
-                    <div class="col-span-1">
-                        <x-h2>Allergene:</x-h2>
-                    </div>
-                    <div class="flex-1 col-span-2">
 
                         Tabelle
-
                     </div>
-                    <div class="flex-1 col-span-1">
+
+                    <div class="col-span-3 md:col-span-1 mt-4">
+
+                        <x-h2>Allergene:</x-h2>
+
+                        <div class="grid grid-rows-6 grid-flow-col gap-2">
 
                         @if($recipe['allergenic1'])
                             <x-allergenic>
@@ -162,11 +159,13 @@
                             </x-allergenic>
                         @endif
 
+                        </div>
+
                     </div>
                 </div>
 
-                <x-h2>Zubereitung:</x-h2>
-                <div class="h-52">
+                <div class="h-52 mt-6">
+                    <x-h2>Zubereitung:</x-h2>
                     {!! $recipe['remarks'] !!}
                 </div>
                 <!--end content slot -->
