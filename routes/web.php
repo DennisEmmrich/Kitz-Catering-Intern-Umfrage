@@ -27,9 +27,7 @@ Route::get('gebrauchsanweisungen', function () {
     return view('gebrauchsanweisungen');
 })->name('gebrauchsanweisungen');
 
-Route::get('ansprechpartner', function () {
-    return view('ansprechpartner');
-})->name('ansprechpartner');
+Route::get('/ansprechpartner', [PageController::class,"ansprechpartner"])->name('ansprechpartner');
 
 Route::get('rezepte', function () {
     return view('rezepte');

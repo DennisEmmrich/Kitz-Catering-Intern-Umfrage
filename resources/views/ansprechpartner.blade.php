@@ -2,18 +2,11 @@
 $contacts = array(
     [
     'image' => asset('assets/contacts/Susanne E.jpg'),
-    'name' => 'Susanne Emmrich',
+    'firstname' => 'Susanne',
+    'lastname' => 'Emmrich',
     'position' => '',
     'phone' => '',
     'mobile' => '0172 4723599',
-    'mail' => '',
-    ],
-    [
-        'image' => asset('assets/contacts/Nico S.jpg'),
-    'name' => 'Nico Seifert',
-    'position' => '',
-    'phone' => '',
-    'mobile' => '0176 22903594',
     'mail' => '',
     ],
 );
@@ -30,7 +23,7 @@ $contacts = array(
                 <img class="h-52 w-52 rounded-full mx-auto" src="{{ $contact['image'] }}" alt="" draggable="false">
                 <div class="w-52 pt-4 mx-auto">
                     <div>
-                        <x-h2>{{ $contact['name'] }}</x-h2>
+                        <x-h2>{{ $contact['firstname'] }} {{ $contact['lastname'] }}</x-h2>
                         @if(!empty($contact['position']))
                             <x-p class="italic">{{ $contact['position'] }}</x-p>
                         @endif

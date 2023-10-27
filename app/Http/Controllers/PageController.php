@@ -6,16 +6,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function welcome()
-    {
-        $cms = new CmsController;
-
-        $recipes = $cms->modelContent('recipes')->result();
-        return view('welcome', [
-            'recipes' => $recipes
-        ]);
-    }
-
     public function belegtebrötchen()
     {
         $cms = new CmsController;
@@ -23,6 +13,16 @@ class PageController extends Controller
         $recipes = $cms->modelContent('recipes')->result();
         return view('belegte-brötchen', [
             'recipes' => $recipes
+        ]);
+    }
+
+    public function ansprechpartner()
+    {
+        $cms = new CmsController;
+
+        $contacts = $cms->modelContent('contacts')->result();
+        return view('ansprechpartner', [
+            'contacts' => $contacts
         ]);
     }
 }
