@@ -53,14 +53,15 @@
                     <div class="col-span-3 md:col-span-2 mt-4">
                         <x-h2>Zutaten:</x-h2>
 
-                        Tabelle
+                        <x-p>Tabelle</x-p>
+
                     </div>
 
                     <div class="col-span-3 md:col-span-1 mt-4">
 
                         <x-h2>Allergene:</x-h2>
 
-                        <div class="grid grid-rows-6 grid-flow-col gap-2">
+                        <div class="grid grid-rows-6 grid-flow-col gap-2 mt-3">
 
                         @if($recipe['allergenic1'])
                             <x-allergenic>
@@ -166,7 +167,7 @@
 
                 <div class="h-52 mt-6">
                     <x-h2>Zubereitung:</x-h2>
-                    {!! $recipe['remarks'] !!}
+                    <x-p>{!! $recipe['remarks'] !!}</x-p>
                 </div>
                 <!--end content slot -->
 
