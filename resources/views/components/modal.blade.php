@@ -31,9 +31,9 @@
         >
 
             <!-- content -->
-            <div class="relative top-0 bottom-0 right-0 flex-shrink-0 w-full md:max-w-4xl mx-auto p-6 overflow-auto bg-cover bg-bgColorPrimary block text-white">
+            <div class="relative top-0 bottom-0 right-0 flex-shrink-0 w-full md:max-w-4xl mx-auto py-6 overflow-auto bg-cover bg-bgColorPrimary block text-white">
 
-                <button @click="fullscreenModal=false" class="absolute top-0 right-0 z-30 items-center justify-center mt-3 mr-6 md:mt-5 md:mr-12 transition hover:scale-105">
+                <button @click="fullscreenModal=false" class="absolute top-0 right-0 z-30 items-center justify-center mt-4 mr-6 md:mr-12 transition hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>

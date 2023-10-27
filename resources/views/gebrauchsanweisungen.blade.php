@@ -27,7 +27,7 @@ $instructions = array(
                 </x-slot:button>
 
                 <!--content slot -->
-                <iframe class="mt-12" src="{{ $instruction['file'] }}" style="width:100%; height:100%;" frameborder="0"></iframe>
+                <x-iframe :path="$instruction['file']"/>
                 <!--end content slot -->
             </x-modal>
             @endforeach
