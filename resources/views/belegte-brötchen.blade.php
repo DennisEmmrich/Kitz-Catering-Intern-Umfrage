@@ -66,7 +66,7 @@
                         @if($recipe['allergenic1'])
                             <x-allergenic>
                                 <x-slot:path>
-                                    {{ asset('assets/icons/fish_allergen_food_allergens_icon_183728.svg') }}
+                                    {{ asset('assets/icons/Fisch.svg') }}
                                 </x-slot:path>
                                 Fisch
                             </x-allergenic>

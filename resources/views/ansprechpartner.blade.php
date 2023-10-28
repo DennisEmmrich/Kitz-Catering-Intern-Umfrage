@@ -1,17 +1,3 @@
-<?php
-$contacts = array(
-    [
-    'image' => asset('assets/contacts/Susanne E.jpg'),
-    'firstname' => 'Susanne',
-    'lastname' => 'Emmrich',
-    'position' => '',
-    'phone' => '',
-    'mobile' => '0172 4723599',
-    'mail' => '',
-    ],
-);
-?>
-
 <x-layout pageTitle="Kitz-Catering / Ansprechpartner">
 
     <x-section link="welcome">
