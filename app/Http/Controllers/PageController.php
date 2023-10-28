@@ -2,20 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Utilities\CockpitApiClient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class PageController extends Controller
 {
-    public function belegtebrötchen()
-    {
-        $cms = new CmsController;
-
-        $recipes = $cms->modelContent('recipes')->result();
-        return view('belegte-brötchen', [
-            'recipes' => $recipes
-        ]);
-    }
-
     public function ansprechpartner()
     {
         $cms = new CmsController;
@@ -23,6 +15,27 @@ class PageController extends Controller
         $contacts = $cms->modelContent('contacts')->result();
         return view('ansprechpartner', [
             'contacts' => $contacts
+        ]);
+    }
+
+    public function recipes()
+    {
+        $cms = new CockpitApiClient;
+        $categories = $cms->model('recipesCategories')->result();
+
+        return view('rezepte', [
+            'categories' => $categories
+        ]);
+    }
+
+    public function category($slug)
+    {
+        $cms = new CockpitApiClient;
+        $category = $cms->model('recipesCategories')->filter('slug', '=', $slug)->result();
+        $recipes = $cms->model('recipes')->filter('category._id', '=', $category[0]['_id'])->populate()->result();
+
+        return view('category', [
+            'recipes' => $recipes
         ]);
     }
 }
