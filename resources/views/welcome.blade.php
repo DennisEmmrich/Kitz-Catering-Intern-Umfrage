@@ -26,8 +26,7 @@
             </div>
         </div>
         -->
-
-        <div class="grid md:grid-cols-2 grid-cols-1 justify-center gap-10 text-center">
+        <x-dashboard-tile-container>
 
             <x-dashboard-tile :path="asset('assets/images/rezepte.jpg')">
                 <x-slot:link>{{ route('rezepte') }}</x-slot:link>
@@ -63,7 +62,7 @@
                 <x-slot:headline>Ansprechpartner</x-slot:headline>
             </x-dashboard-tile>
 
-        </div>
+        </x-dashboard-tile-container>
 
     </x-section>
 

@@ -20,7 +20,7 @@
 
     <x-section link="rezepte">
 
-        <div class="grid md:grid-cols-2 grid-cols-1 justify-center gap-10 text-center">
+        <x-dashboard-tile-container>
 
             @foreach($recipes as $recipe)
                 <!-- modal -->
@@ -190,7 +190,7 @@
                 </x-modal>
             @endforeach
 
-        </div>
+        </x-dashboard-tile-container>
 
     </x-section>
 

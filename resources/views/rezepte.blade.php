@@ -6,7 +6,7 @@
 
     <x-section link="welcome">
 
-        <div class="grid md:grid-cols-2 grid-cols-1 justify-center gap-10 text-center">
+        <x-dashboard-tile-container>
 
             @foreach($categories as $category)
                 <x-dashboard-tile :path="getImage($category['image']['_id'], 'webp', 600)">
@@ -44,7 +44,7 @@
 
             -->
 
-        </div>
+        </x-dashboard-tile-container>
 
     </x-section>
 
