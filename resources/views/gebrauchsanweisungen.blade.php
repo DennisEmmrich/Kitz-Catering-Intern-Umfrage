@@ -1,15 +1,3 @@
-<?php
-$instructions = array(
-    [
-    'name' => 'Gebrauchsanweisung 1',
-    'file' => asset('assets/betriebsanweisungen/dummy.pdf'),
-    ],
-    [
-    'name' => 'Gebrauchsanweisung 2',
-    'file' => asset('assets/betriebsanweisungen/dummy.pdf'),
-    ],
-);
-?>
 
 <x-layout pageTitle="Kitz-Catering / Gebrauchsanweisungen">
 
@@ -17,17 +5,17 @@ $instructions = array(
 
         <div class="grid grid-cols-1">
 
-            @foreach($instructions as $instruction)
+            @foreach($manuals as $manual)
             <!-- modal -->
             <x-modal>
                 <x-slot:button>
                     <x-list-item>
-                        {{ $instruction['name'] }}
+                        {{ $manual['title'] }}
                     </x-list-item>
                 </x-slot:button>
 
                 <!--content slot -->
-                <x-iframe :path="$instruction['file']"/>
+                <x-iframe :path="getImage($manual['file']['_id'], 'webp', 600)"/>
                 <!--end content slot -->
             </x-modal>
             @endforeach

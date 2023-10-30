@@ -8,15 +8,6 @@ use Illuminate\Support\Arr;
 
 class PageController extends Controller
 {
-    public function ansprechpartner()
-    {
-        $cms = new CockpitApiClient;
-        $contacts = $cms->model('contacts')->result();
-
-        return view('ansprechpartner', [
-            'contacts' => $contacts
-        ]);
-    }
 
     public function recipes()
     {
@@ -36,6 +27,36 @@ class PageController extends Controller
 
         return view('category', [
             'recipes' => $recipes
+        ]);
+    }
+
+    public function ansprechpartner()
+    {
+        $cms = new CockpitApiClient;
+        $contacts = $cms->model('contacts')->result();
+
+        return view('ansprechpartner', [
+            'contacts' => $contacts
+        ]);
+    }
+
+    public function operatingInstructions()
+    {
+        $cms = new CockpitApiClient;
+        $operatingInstructions = $cms->model('operatingInstructions')->result();
+
+        return view('betriebsanweisungen', [
+            'operatingInstructions' => $operatingInstructions
+        ]);
+    }
+
+    public function manuals()
+    {
+        $cms = new CockpitApiClient;
+        $manuals = $cms->model('manuals')->result();
+
+        return view('gebrauchsanweisungen', [
+            'manuals' => $manuals
         ]);
     }
 }
