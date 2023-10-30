@@ -15,9 +15,13 @@
                 <x-modal>
                     <x-slot:button>
                         <!-- tile -->
-                        <x-dashboard-tile-recipe :path="getImage($recipe['thirdImage']['_id'], 'webp', 600)">
-                            {{ $recipe['product'] }}
-                        </x-dashboard-tile-recipe>
+                        <div class="cursor-pointer" @click="fullscreenModal=true" draggable="false">
+                            <div class="w-full h-52 grid content-end text-white text-2xl font-bold rounded-xl bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
+                                <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
+                                    {{ $recipe['product'] }}
+                                </div>
+                            </div>
+                        </div>
                         <!--end tile -->
                     </x-slot:button>
 
@@ -60,12 +64,12 @@
                             <x-h2>Allergene</x-h2>
                             <div class="grid grid-rows-6 grid-flow-col gap-2 mt-2.5">
                             @foreach($recipe['allergenics'] as $allergenic)
-                                <x-allergenic>
-                                    <x-slot:path>
-                                        {{ asset('assets/icons/'.$allergenic.'.svg') }}
-                                    </x-slot:path>
-                                    {{ $allergenic }}
-                                </x-allergenic>
+                                <div class="flex col-span-1 space-x-1 p-0.5">
+                                    <img class="h-8 w-8 my-auto" src="{{ asset('assets/icons/'.$allergenic.'.svg') }}" alt="">
+                                    <div class="max-h-fit my-auto">
+                                        {{ $allergenic }}
+                                    </div>
+                                </div>
                             @endforeach
                             </div>
                         </div>
