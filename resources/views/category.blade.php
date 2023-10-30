@@ -15,11 +15,9 @@
                 <x-modal>
                     <x-slot:button>
                         <!-- tile -->
-                        @if(!empty($recipe['thirdImage']))
                         <x-dashboard-tile-recipe :path="getImage($recipe['thirdImage']['_id'], 'webp', 600)">
                             {{ $recipe['product'] }}
                         </x-dashboard-tile-recipe>
-                        @endif
                         <!--end tile -->
                     </x-slot:button>
 

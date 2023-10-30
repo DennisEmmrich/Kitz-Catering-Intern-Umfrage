@@ -10,9 +10,9 @@ class PageController extends Controller
 {
     public function ansprechpartner()
     {
-        $cms = new CmsController;
+        $cms = new CockpitApiClient;
+        $contacts = $cms->model('contacts')->result();
 
-        $contacts = $cms->modelContent('contacts')->result();
         return view('ansprechpartner', [
             'contacts' => $contacts
         ]);
