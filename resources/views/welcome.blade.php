@@ -7,25 +7,30 @@
 
     <x-section>
 
-        <!--
-        <div class="flex p-4 mb-10 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 justify-between" role="alert">
-            <div class="w-2/3 ">
-                Liebe Kollegen, <br />
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br /> <br /> <br />
-
-                Mit freundlichen Grüßen <br /> <br />
-
-                Susanne Emmrich
-
-            </div>
+        <!-- mitteilungen start-->
+        @foreach($messages as $message)
+            @if($message['start'] <= now()->format('Y-m-d') && $message['end'] >= now()->format('Y-m-d'))
+                <div class="@if(!empty($message['textColor'])) text-black @endif text-white @if(!empty($message['borderColor'])) border-black @endif rounded-xl p-4 mb-6 bg-bgColorSecondary">
+                    <div>
+                    {!! $message['text'] !!}
+                    </div>
+                </div>
+            @elseif($message['test'])
+                <div class="@if(!empty($message['textColor'])) text-black @endif text-white @if(!empty($message['borderColor'])) border-black @endif rounded-xl p-4 mb-6 bg-bgColorSecondary">
+                    <div>
+                        {!! $message['text'] !!}
+                    </div>
+                </div>
+            @endif
+            <!--
             <div class="whitespace-nowrap">
                 <img class="h-32" src="https://placehold.co/600x600" alt="">
                 Susanne Emmrich
             </div>
-        </div>
-        -->
+            -->
+        @endforeach
+        <!-- mitteilungen end-->
+
         <x-dashboard-tile-container>
 
             <x-dashboard-tile :path="asset('assets/images/rezepte.jpg')">
