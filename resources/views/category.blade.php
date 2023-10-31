@@ -62,7 +62,7 @@
 
                         <div class="col-span-3 md:col-span-1 md:mt-4">
                             <x-h2>Allergene</x-h2>
-                            <div class="grid grid-rows-6 grid-flow-col gap-2 mt-2.5">
+                            <div class="grid grid-cols-3 md:grid-cols-2 mt-2.5">
                             @foreach($recipe['allergenics'] as $allergenic)
                                 <div class="flex col-span-1 space-x-1 p-0.5">
                                     <img class="h-8 w-8 my-auto" src="{{ asset('assets/icons/'.$allergenic.'.svg') }}" alt="">
