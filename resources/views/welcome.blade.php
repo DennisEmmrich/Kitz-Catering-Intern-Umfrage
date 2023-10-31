@@ -10,15 +10,9 @@
         <!-- mitteilungen start-->
         @foreach($messages as $message)
             @if($message['start'] <= now()->format('Y-m-d') && $message['end'] >= now()->format('Y-m-d'))
-                <div class="@if(!empty($message['textColor'])) text-black @endif text-white @if(!empty($message['borderColor'])) border-black @endif rounded-xl p-4 mb-6 bg-bgColorSecondary">
+                <div class="@if(!empty($message['textColor'])) text-black @endif text-white @if(!empty($message['borderColor'])) border-black @endif rounded-xl p-6 mb-6 bg-bgColorSecondary">
                     <div>
                     {!! $message['text'] !!}
-                    </div>
-                </div>
-            @elseif($message['test'])
-                <div class="@if(!empty($message['textColor'])) text-black @endif text-white @if(!empty($message['borderColor'])) border-black @endif rounded-xl p-4 mb-6 bg-bgColorSecondary">
-                    <div>
-                        {!! $message['text'] !!}
                     </div>
                 </div>
             @endif
