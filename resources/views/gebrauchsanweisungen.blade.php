@@ -1,4 +1,3 @@
-
 <x-layout pageTitle="Kitz-Catering / Gebrauchsanweisungen">
 
     <x-section link="welcome">
