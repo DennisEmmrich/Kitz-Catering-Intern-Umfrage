@@ -6,7 +6,7 @@
 
             @foreach($contacts as $contact)
             <div class="text-white rounded-xl bg-bgColorSecondary p-6 text-center">
-                <img class="h-52 w-52 rounded-full mx-auto" src="{{ getImage($contact['image']['_id'], 'webp', 600) }}" alt="" draggable="false">
+                <img class="h-52 w-52 rounded-full mx-auto" src="{{ getImage($contact['image']['_id'], 'webp', 600) }}" alt="" draggable="false" loading="lazy">
                 <div class="w-52 pt-4 mx-auto">
                     <div>
                         <x-h2>{{ $contact['firstname'] }} {{ $contact['lastname'] }}</x-h2>
