@@ -15,9 +15,7 @@ use \App\Http\Controllers\PageController;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [PageController::class,'messages'])->name('welcome');
 
 Route::get('/rezepte', [PageController::class,'recipes'])->name('rezepte');
 

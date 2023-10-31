@@ -9,6 +9,16 @@ use Illuminate\Support\Arr;
 class PageController extends Controller
 {
 
+    public function messages()
+    {
+        $cms = new CockpitApiClient;
+        $messages = $cms->model('messages')->result();
+
+        return view('welcome', [
+            'messages' => $messages
+        ]);
+    }
+
     public function recipes()
     {
         $cms = new CockpitApiClient;
