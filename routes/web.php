@@ -23,7 +23,7 @@ Route::get('/rezepte/{slug}', [PageController::class,'category'])->name('rezept'
 
 Route::get('/betriebsanweisungen', [PageController::class,'operatingInstructions'])->name('betriebsanweisungen');
 
-Route::get('/gebrauchsanweisungen', [PageController::class,'manuals'])->name('gebrauchsanweisungen');
+Route::get('/gebrauchsanweisungen/', [PageController::class,'manuals'])->name('gebrauchsanweisungen');
 
 Route::get('/ansprechpartner', [PageController::class,"ansprechpartner"])->name('ansprechpartner');
 
