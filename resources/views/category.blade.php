@@ -16,7 +16,7 @@
                     <x-slot:button>
                         <!-- tile -->
                         <div class="cursor-pointer" @click="fullscreenModal=true" draggable="false">
-                            <div class="w-full h-52 grid content-end text-white text-2xl font-bold rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
+                            <div class="w-full h-52 grid content-end text-white text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
                                 <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
                                     {{ $recipe['product'] }}
                                 </div>
@@ -53,8 +53,8 @@
                             <table class="mt-3">
                             @foreach($recipe['ingredients'] as $ingredient)
                                     <tr class="odd:bg-bgColorSecondary even:bg-bgColorPrimary mt-3">
-                                        <td class="w-full pl-3 py-1">{{ $ingredient['ingredient'] }}</td>
-                                        <td class="w-auto whitespace-nowrap px-3 py-1">{{ $ingredient['quantity'] }}</td>
+                                        <td class="w-full pl-3 py-1"><x-p>{{ $ingredient['ingredient'] }}</x-p></td>
+                                        <td class="w-auto whitespace-nowrap px-3 py-1"><x-p>{{ $ingredient['quantity'] }}</x-p></td>
                                     </tr>
                             @endforeach
                             </table>
@@ -67,7 +67,9 @@
                                 <div class="flex col-span-1 space-x-1 p-0.5">
                                     <img class="h-8 w-8 my-auto" src="{{ asset('assets/icons/'.$allergenic.'.svg') }}" alt="">
                                     <div class="max-h-fit my-auto">
+                                        <x-p>
                                         {{ $allergenic }}
+                                        </x-p>
                                     </div>
                                 </div>
                             @endforeach
