@@ -80,7 +80,7 @@
 
                     <div class="mt-6 pb-16 sm:pb-0">
                         <x-h2>Bemerkungen</x-h2>
-                        <x-p>{!! $recipe['remarks'] !!}</x-p>
+                        {!! \Illuminate\Support\Facades\Blade::render(getBladeString($recipe['remarks'])) !!}
                     </div>
                     <!--end content slot -->
 
