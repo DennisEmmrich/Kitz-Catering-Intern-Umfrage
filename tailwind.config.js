@@ -8,8 +8,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['DGUV'],
-                'DGUV': ['DGUV', 'sans-serif'],
+                sans: ['roboto-slab'],
+                'roboto-slab': ['roboto-slab', 'sans-serif'],
             },
             colors: {
                 primary: '',
