@@ -132,6 +132,18 @@ class CockpitApiClient
         return $this;
     }
 
+    public function getAsset($id): self
+    {
+        $query = $this->cmsUrl.'/assets/image/'.$id;
+
+        $queryString = http_build_query();
+
+        $this->options = null;
+        $this->query = $query.'?'.$queryString;
+
+        return $this;
+    }
+
     public function result()
     {
         return $this->send();
