@@ -16,7 +16,7 @@
                     <x-slot:button>
                         <!-- tile -->
                         <div class="cursor-pointer" @click="fullscreenModal=true" draggable="false">
-                            <div class="w-full h-52 grid content-end text-white text-2xl font-bold rounded-xl bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
+                            <div class="w-full h-52 grid content-end text-white text-2xl font-bold rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
                                 <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
                                     {{ $recipe['product'] }}
                                 </div>
