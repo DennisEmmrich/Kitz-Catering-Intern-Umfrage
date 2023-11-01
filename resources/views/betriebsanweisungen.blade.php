@@ -14,7 +14,7 @@
                 </x-slot:button>
 
                 <!--content slot -->
-                <x-iframe :path="getImage($operatingInstruction['file']['_id'], 'webp', 600)"/>
+                <x-iframe :path="getAsset($operatingInstruction['file']['_id'])"/>
                 <!--end content slot -->
             </x-modal>
             @endforeach
