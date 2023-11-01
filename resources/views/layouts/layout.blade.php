@@ -26,7 +26,7 @@
         [x-cloak] { display: none !important; }
     </style>
 
-    <!-- Schriftarten -->
+    <!-- fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/ayz1cep.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
