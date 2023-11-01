@@ -78,7 +78,7 @@
 
                     </div>
 
-                    <div class="mt-6 pb-12 sm:pb-0 outline">
+                    <div class="mt-6 pb-16 sm:pb-0">
                         <x-h2>Bemerkungen</x-h2>
                         <x-p>{!! $recipe['remarks'] !!}</x-p>
                     </div>
