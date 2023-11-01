@@ -12,7 +12,7 @@
             @if($message['start'] <= now()->format('Y-m-d') && $message['end'] >= now()->format('Y-m-d'))
                 <div class="@if($message['borderColorRed']) border-2 border-red-500 @else border-2 border-[#dfcc91] @endif text-white rounded-xl shadow-md p-6 mb-6 bg-bgColorSecondary">
                     <div>
-                    {!! $message['text'] !!}
+                        {!! \Illuminate\Support\Facades\Blade::render(getBladeString($message['text'])) !!}
                     </div>
                 </div>
             @endif
