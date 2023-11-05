@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="mt-6 pb-16 sm:pb-0">
-                        <x-h2>Bemerkungen</x-h2>
+                        <x-h2>Zubereitung</x-h2>
                         {!! \Illuminate\Support\Facades\Blade::render(getBladeString($recipe['remarks'])) !!}
                     </div>
                     <!--end content slot -->
