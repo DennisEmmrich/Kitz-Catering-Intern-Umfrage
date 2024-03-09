@@ -22,10 +22,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!--end tile -->
+                        <!-- end tile -->
                     </x-slot:button>
 
-                    <!--content slot -->
+                    <!-- content slot -->
                     <x-h1>{{ $recipe['product'] }}</x-h1>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
@@ -82,7 +82,7 @@
                         <x-h2>Zubereitung</x-h2>
                         {!! \Illuminate\Support\Facades\Blade::render(getBladeString($recipe['remarks'])) !!}
                     </div>
-                    <!--end content slot -->
+                    <!-- end content slot -->
 
                 </x-modal>
             @endforeach
