@@ -27,6 +27,8 @@ Route::get('/gebrauchsanweisungen', [PageController::class,'manuals'])->name('ge
 
 Route::get('/ansprechpartner', [PageController::class,"ansprechpartner"])->name('ansprechpartner');
 
-
+Route::get('/einkauf', function () {
+    return view('einkauf');
+})->name('einkauf');
 
 

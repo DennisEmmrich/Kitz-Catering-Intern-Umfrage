@@ -24,6 +24,14 @@ class PageController extends Controller
         $cms = new CockpitApiClient;
         $categories = $cms->model('recipesCategories')->result();
 
+        // Funktion zur Vergleichsfunktion für die Sortierung nach dem Namen der Kategorie
+        $compareFunction = function($a, $b) {
+            return strcmp($a['name'], $b['name']);
+        };
+
+        // Alphabetisch nach dem Namen der Kategorie sortieren
+        usort($categories, $compareFunction);
+
         return view('rezepte', [
             'categories' => $categories
         ]);
@@ -34,6 +42,14 @@ class PageController extends Controller
         $cms = new CockpitApiClient;
         $category = $cms->model('recipesCategories')->filter('slug', '=', $slug)->result();
         $recipes = $cms->model('recipes')->filter('category._id', '=', $category[0]['_id'])->populate()->result();
+
+        // Funktion zur Vergleichsfunktion für die Sortierung nach dem Produkt
+        $compareFunction = function($a, $b) {
+            return strcmp($a['product'], $b['product']);
+        };
+
+        // Alphabetisch nach Produkt sortieren
+        usort($recipes, $compareFunction);
 
         return view('category', [
             'recipes' => $recipes
