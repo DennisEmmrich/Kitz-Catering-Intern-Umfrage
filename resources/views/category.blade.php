@@ -16,16 +16,16 @@
                     <x-slot:button>
                         <!-- tile -->
                         <div class="cursor-pointer" @click="fullscreenModal=true" draggable="false">
-                            <div class="w-full h-52 grid content-end text-white text-xl lg:text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
+                            <div class="w-full h-56 grid content-end text-white text-xl lg:text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
                                 <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
                                     {{ $recipe['product'] }}
                                 </div>
                             </div>
                         </div>
-                        <!--end tile -->
+                        <!-- end tile -->
                     </x-slot:button>
 
-                    <!--content slot -->
+                    <!-- content slot -->
                     <x-h1>{{ $recipe['product'] }}</x-h1>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
@@ -82,7 +82,7 @@
                         <x-h2>Zubereitung</x-h2>
                         {!! \Illuminate\Support\Facades\Blade::render(getBladeString($recipe['remarks'])) !!}
                     </div>
-                    <!--end content slot -->
+                    <!-- end content slot -->
 
                 </x-modal>
             @endforeach
