@@ -1,5 +1,5 @@
 @props([
-    'img' => 'https://placehold.co/600x600'
+    'img' => asset('assets/images/placeholder.jpeg')
 ])
 
 <x-layout pageTitle="Kitz-Catering / Rezepte">
