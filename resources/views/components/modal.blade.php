@@ -27,7 +27,7 @@
             x-transition:leave="transition ease-in duration-300"
             x-transition:leave-start="translate-y-0"
             x-transition:leave-end="translate-y-full"
-            class="flex fixed inset-0 z-[99] w-screen h-screen"
+            class="flex fixed inset-0 z-[99] w-screen h-auto"
         >
 
             <!-- content -->
