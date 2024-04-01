@@ -16,11 +16,20 @@
                     <x-slot:button>
                         <!-- tile -->
                         <div class="cursor-pointer" @click="fullscreenModal=true" draggable="false">
-                            <div class="w-full h-56 grid content-end text-white text-xl lg:text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
-                                <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
-                                    {{ $recipe['product'] }}
+                            @if(!empty($recipe['thirdImage']))
+                                <div class="w-full h-56 grid content-end text-white text-xl lg:text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ getImage($recipe['thirdImage']['_id'], 'webp', 600) }}');">
+                                    <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
+                                        {{ $recipe['product'] }}
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <!-- Placeholder image -->
+                                <div class="w-full h-56 grid content-end text-white text-xl lg:text-2xl font-bold font-sans rounded-xl shadow-md bg-cover bg-center" style="background-image: url('{{ asset('assets/images/placeholder.jpeg') }}');">
+                                    <div class="p-3 backdrop-blur-sm bg-bgColorSecondary/30 whitespace-nowrap rounded-b-xl">
+                                        {{ $recipe['product'] }}
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                         <!-- end tile -->
                     </x-slot:button>
