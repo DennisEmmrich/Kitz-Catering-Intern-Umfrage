@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.no-link-bgColor{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: rbga(0, 0, 0, 0);
+}
