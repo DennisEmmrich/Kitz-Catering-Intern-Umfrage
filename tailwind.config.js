@@ -19,6 +19,12 @@ module.exports = {
                 bgColorSecondary: '#575757',
                 bgColorTertiary: '',
             },
+            // Basisstile definieren
+            '@layer base': {
+                html: {
+                    '-webkit-tap-highlight-color': 'transparent',
+                },
+            },
         },
     },
     plugins: [
