@@ -4,4 +4,6 @@
 
 .no-tap-highlight {
     -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent; /* Für Firefox */
+    tap-highlight-color: transparent; /* Für andere Browser */
 }
