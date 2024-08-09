@@ -27,50 +27,11 @@
 
         <x-dashboard-tile-container>
 
-            <x-dashboard-tile :path="asset('assets/images/rezepte.jpg')">
-                <x-slot:link>{{ route('rezepte') }}</x-slot:link>
-                <x-slot:headline>Rezepte</x-slot:headline>
-            </x-dashboard-tile>
-
-            <!--
-            <x-dashboard-tile :path="asset( $img )">
-                <x-slot:link></x-slot:link>
-                <x-slot:headline>Bestellungen</x-slot:headline>
-            </x-dashboard-tile>
-            -->
-
-            <!--
-            <x-dashboard-tile :path="asset( 'assets/images/betriebsanweisungen.jpg' )">
-                <x-slot:link>{{ route('betriebsanweisungen') }}</x-slot:link>
-                <x-slot:headline>Betriebsanweisungen</x-slot:headline>
-            </x-dashboard-tile>
-            -->
-
-            <!--
-            <x-dashboard-tile :path="asset('assets/images/gebrauchsanweisung.jpg')">
-                <x-slot:link>{{ route('gebrauchsanweisungen') }}</x-slot:link>
-                <x-slot:headline>Gebrauchsanweisungen</x-slot:headline>
-            </x-dashboard-tile>
-            -->
-
-            <!--
-            <x-dashboard-tile :path="asset('assets/images/onboarding.jpg')">
-                <x-slot:link></x-slot:link>
-                <x-slot:headline>Onboarding</x-slot:headline>
-            </x-dashboard-tile>
-            -->
-
-            <x-dashboard-tile :path="asset('assets/images/ansprechpartner.jpg')">
-                <x-slot:link>{{ route('ansprechpartner') }}</x-slot:link>
-                <x-slot:headline>Ansprechpartner</x-slot:headline>
-            </x-dashboard-tile>
-
-            <!--
             <x-dashboard-tile :path="asset('assets/images/ansprechpartner.jpg')">
                 <x-slot:link>{{ route('survey') }}</x-slot:link>
                 <x-slot:headline>Umfrage</x-slot:headline>
             </x-dashboard-tile>
-            -->
+
 
         </x-dashboard-tile-container>
 
