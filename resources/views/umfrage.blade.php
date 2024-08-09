@@ -2,26 +2,23 @@
 
     <x-section>
 
-            <x-h1 class="text-center mt-28">Bitte bewerte uns</x-h1>
+        <x-h1 class="text-center mt-28">Bitte bewerte uns</x-h1>
 
-            <div class="mt-28">
-                <form action="/survey" method="POST">
-                    @csrf
-                    <div class="flex justify-evenly">
-                        <button type="submit" name="rating" value="1" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl bg-[#e3ce97] animate-button">1 Stern</button>
-                        <button type="submit" name="rating" value="2" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl bg-[#e3ce97] animate-button">2 Sterne</button>
-                        <button type="submit" name="rating" value="3" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl bg-[#e3ce97] animate-button">3 Sterne</button>
-                    </div>
-                </form>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
             </div>
+        @endif
 
-            @if (session('status'))
-                <div class="alert alert-success mt-20 text-center" id="status-message">
-                    <x-h2>
-                        {{ session('status') }}
-                    </x-h2>
-                </div>
-            @endif
+        <form action="/umfrage/submit" method="POST">
+            @csrf
+            <input type="hidden" name="question" value="umfrage">
+            <div class="flex justify-evenly">
+                <button type="submit" name="rating" value="1" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl bg-[#e3ce97] animate-button">1 Stern</button>
+                <button type="submit" name="rating" value="2" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl animate-button">2 Sterne</button>
+                <button type="submit" name="rating" value="3" class="w-60 h-60 rounded-full border-2 font-bold text-white text-2xl animate-button">3 Sterne</button>
+            </div>
+        </form>
 
     </x-section>
 

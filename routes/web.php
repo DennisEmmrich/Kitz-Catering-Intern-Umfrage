@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PageController;
-use App\Http\Controllers\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +17,15 @@ use App\Http\Controllers\SurveyController;
 
 Route::get('/', [PageController::class,'messages'])->name('welcome');
 
-Route::get('/rezepte', [PageController::class,'recipes'])->name('rezepte');
 
-Route::get('/rezepte/{slug}', [PageController::class,'category'])->name('rezept');
 
-Route::get('/betriebsanweisungen', [PageController::class,'operatingInstructions'])->name('betriebsanweisungen');
+use App\Http\Controllers\SurveyController;
 
-Route::get('/gebrauchsanweisungen', [PageController::class,'manuals'])->name('gebrauchsanweisungen');
+Route::get('/umfrage', function () {
+    return view('umfrage');
+})->name('umfrage');
 
-Route::get('/ansprechpartner', [PageController::class,"ansprechpartner"])->name('ansprechpartner');
-
-Route::get('/einkauf', function () {
-    return view('einkauf');
-})->name('einkauf');
-
-Route::get('/survey', [SurveyController::class, 'show'])->name('survey');
-Route::post('/survey', [SurveyController::class, 'submit'])->name('survey');
-
+Route::get('/ergebnisse', function () {
+    return view('ergebnisse');
+})->name('ergebnisse');
 
