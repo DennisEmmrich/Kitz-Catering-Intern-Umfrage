@@ -17,10 +17,6 @@ use \App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class,'messages'])->name('welcome');
 
-
-
-use App\Http\Controllers\SurveyController;
-
 Route::get('/umfrage', function () {
     return view('umfrage');
 })->name('umfrage');
@@ -28,4 +24,3 @@ Route::get('/umfrage', function () {
 Route::get('/ergebnisse', function () {
     return view('ergebnisse');
 })->name('ergebnisse');
-
